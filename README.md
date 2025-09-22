@@ -56,7 +56,7 @@ Publish release — the deployment workflow will run and trigger Render.
 11. Verify Deployment
 Visit your Render URL → `/quote` endpoint should return a random quote.
 
-To verify workflow, you can make some change to source code, for example add some text to response in `app.js`:
+To confirm that your workflow is functioning correctly, try modifying the source code. For instance, you could update the response in `app.js` to include extra text:
 ```
 app.get('/quote',(req,res)=>{
   const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -64,4 +64,4 @@ app.get('/quote',(req,res)=>{
   res.json({quote: "Day's quote: " + quotes[randomIndex]});
 });
 ```
-Then push changes to your GitHub repository. After Render deployment is ready verify that response has changed.
+Commit and push your changes to the GitHub repository. Once the Render deployment is complete, check your application to ensure the response reflects your update.
