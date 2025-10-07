@@ -6,10 +6,18 @@ on:
   pull_request:
     branches: [main]
 
-  jobs:
-    Lint-and-test:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@5
-        - name: Linting
-          run: npm run lint
+jobs:
+  Lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Linting
+        run: npm run lint
+      - name: Run tests
+        run: npm run test
+
