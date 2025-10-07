@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  jobs:
+    Lint-and-test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@5
+        - name: Linting
+          run: npm run lint
