@@ -1,7 +1,3 @@
-> [!NOTE]
-> Eihän tätä saa renderille ellei forkkaa. Löytyy täältä https://github.com/Phoolis/7-quoteapi-ci-cd-Phoolis
-
-
 # Quote of the Day API - CI/CD pipeline
 
 **NOTE** This assignment is done using the public repository due to Render.com restrictions.
