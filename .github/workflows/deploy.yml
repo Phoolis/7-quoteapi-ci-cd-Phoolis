@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    tags: ["*"]
+
+jobs:
+  deploy-to-render:
+    if: |
+      startsWith(github.ref, 'regs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render.com
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          if [ -z $deploy_url ]; then
+            echo "RENDER_DEPLOY_HOOK" secret is not set"
+            exit 1
+          fi
+
+          curl "$deploy_url"
