@@ -15,7 +15,7 @@ jobs:
           deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK }}
         run: |
           if [ -z $deploy_url ]; then
-            echo "RENDER_DEPLOY_HOOK" secret is not set"
+            echo "RENDER_DEPLOY_HOOK secret is not set"
             exit 1
           fi
 
